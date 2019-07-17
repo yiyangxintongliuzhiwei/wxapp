@@ -3,7 +3,9 @@
     <img class="images" :src="userinfo.avatarUrl" alt="" v-if="isshow">
     <Button open-type="getUserInfo" v-else @getuserinfo="getUserInfo">获取用户信息</Button>
     <p>Hello {{userinfo.nickName}}</p>
-    <div class="submit">开启小程序</div>
+    <!-- 阻止冒泡@click.stop -->
+    <!-- 小程序点击事件@tap -->
+    <div class="submit" @click="todetail" v-if="isshow">开启小程序</div>
   </div>
 </template>
 <script>
@@ -34,6 +36,12 @@ export default {
       if (data.mp.detail.rawData) {
         this.handgetuserinfo()
       }
+    },
+    todetail() {
+      // console.log('todetail')
+      wx.navigateTo({
+        url: "/pages/list/main"
+      })
     }
   }
 }
@@ -41,6 +49,7 @@ export default {
 
 <style>
   .containner{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center
