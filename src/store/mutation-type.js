@@ -1,0 +1,1 @@
+export const RECIVE_LIST = 'recive_list'

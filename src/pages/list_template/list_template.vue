@@ -1,16 +1,24 @@
 <template>
   <div>
     <div>
-      <span>春秋</span>
+      <span>{{item.username}}</span>
     </div>
-    <div>公司名称</div>
+    <div>{{item.companyname}}</div>
     <div class="imgcontain"><img src="/static/images/3.jpg" alt=""></div>
     <div>
-      <span>评论66</span>
-      <span>点赞88</span>
+      <span>评论{{item.dianzan}}</span>
+      <span>点赞{{item.pinglun}}</span>
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: [
+    'item', 'index'
+  ]
+}
+</script>
+
 <style>
 .imgcontain{
   width: 100%;

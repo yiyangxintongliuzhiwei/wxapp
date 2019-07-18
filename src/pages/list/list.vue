@@ -11,13 +11,22 @@
           <img src="/static/images/2.jpg" alt="">
       </swiper-item>
     </swiper>
-    <ListTap />
+    <ListTap v-for="(item, index) in listTmp.listdata" :key=index :item="item" :index="index"></ListTap>
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 import ListTap from '../list_template/list_template.vue'
 export default {
-    components: {ListTap}
+  components: {ListTap},
+  beforeMount() {
+    //分发action,触发action
+    this.$store.dispatch('getlist')
+  },
+  computed: {
+    //映射状态
+    ...mapState(['listTmp'])
+  },
 }
 </script>
 
