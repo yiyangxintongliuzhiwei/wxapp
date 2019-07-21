@@ -1,10 +1,42 @@
 {
     "pages": [
-        "pages/index/main",
-        "pages/list/main"
+        "pages/hometost/main",
+        "pages/list/main",
+        "pages/index/main"
+        
     ],
     "window": {
-        "navigationBarBackgroundColor": "#8ed145",
-        "navigationBarTitleText": "直播吧"
-    }
+        "navigationBarBackgroundColor": "#ffffff"
+    },
+    "tabBar": {
+        "color": "#999",
+        "backgroundColor": "#fafafa",
+        "selectedColor": "#333",
+        "borderStyle": "white",
+    
+        "list": [{
+          "text": "首页",
+          "pagePath": "pages/hometost/main",
+          "iconPath": "static/tabbarimg/tabbar_homepage.png",
+          "selectedIconPath": "static/tabbarimg/tabbar_homepage_pressed.png"
+        }, {
+          "text": "分类",
+          "pagePath": "pages/list/main",
+          "iconPath": "static/tabbarimg/tabbar_classification.png",
+          "selectedIconPath": "static/tabbarimg/tabbar_classification_pressed.png"
+        },
+        {
+          "text": "购物车",
+          "pagePath": "pages/list/main",
+          "iconPath": "static/tabbarimg/tabbar_shopping cart.png",
+          "selectedIconPath": "static/tabbarimg/tabbar_shopping cart_pressed.png"
+        },
+        {
+          "text": "个人中心",
+          "pagePath": "pages/list/main",
+          "iconPath": "static/tabbarimg/tabbar_mine.png",
+          "selectedIconPath": "static/tabbarimg/tabbar_mine_pressed.png"
+        }],
+        "position": "bottom"
+      }
 }

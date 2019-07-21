@@ -2,10 +2,10 @@
   <div class="containner">
     <img class="images" :src="userinfo.avatarUrl" alt="" v-if="isshow">
     <Button open-type="getUserInfo" v-else @getuserinfo="getUserInfo">获取用户信息</Button>
-    <p>Hello {{userinfo.nickName}}</p>
+    <p v-if="isshow">Hello {{userinfo.nickName}}</p>
     <!-- 阻止冒泡@click.stop -->
     <!-- 小程序点击事件@tap -->
-    <div class="submit" @click="todetail" v-if="isshow">开启小程序</div>
+    <div class="submit" @click="todetail" v-if="isshow">进入Uni</div>
   </div>
 </template>
 <script>
@@ -38,9 +38,8 @@ export default {
       }
     },
     todetail() {
-      // console.log('todetail')
       wx.navigateTo({
-        url: "/pages/list/main"
+        url: "/pages/hometost/main"
       })
     }
   }
