@@ -72,31 +72,31 @@ export default {
       isactive: 0,
       pruductlists: [
         {
-          imgurl: './img/xuegao.jpg',
+          imgurl: require("./img/xuegao.jpg"),
           description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         },
         {
-          imgurl: './img/xuegao.jpg',
+          imgurl: require("./img/xuegao.jpg"),
           description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         },
         {
-          imgurl: './img/xuegao.jpg',
+          imgurl: require("./img/xuegao.jpg"),
           description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         },
         {
-          imgurl: './img/xuegao.jpg',
+          imgurl: require("./img/xuegao.jpg"),
           description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         },
         {
-          imgurl: './img/xuegao.jpg',
+          imgurl: require("./img/xuegao.jpg"),
           description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
