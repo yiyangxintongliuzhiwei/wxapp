@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/hometost/main",
+        "pages/type/main",
         "pages/list/main",
         "pages/index/main"
         
@@ -21,7 +22,7 @@
           "selectedIconPath": "static/tabbarimg/tabbar_homepage_pressed.png"
         }, {
           "text": "分类",
-          "pagePath": "pages/list/main",
+          "pagePath": "pages/type/main",
           "iconPath": "static/tabbarimg/tabbar_classification.png",
           "selectedIconPath": "static/tabbarimg/tabbar_classification_pressed.png"
         },
