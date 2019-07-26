@@ -2,6 +2,7 @@
     "pages": [
         "pages/hometost/main",
         "pages/type/main",
+        "pages/shopbus/main",
         "pages/list/main",
         "pages/index/main"
         
@@ -28,7 +29,7 @@
         },
         {
           "text": "购物车",
-          "pagePath": "pages/list/main",
+          "pagePath": "pages/shopbus/main",
           "iconPath": "static/tabbarimg/tabbar_shopping cart.png",
           "selectedIconPath": "static/tabbarimg/tabbar_shopping cart_pressed.png"
         },

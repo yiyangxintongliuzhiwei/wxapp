@@ -37,37 +37,37 @@ export default {
       isactive: '个人洗护',
       huowulist: [
         {
-          imgurl: require("./img/xuegao.jpg"),
+          imgurl: './img/xuegao.jpg',
           des: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           price: 16.0,
           goumai: 394,
         },
         {
-          imgurl: require("./img/xuegao.jpg"),
+          imgurl: './img/xuegao.jpg',
           des: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           price: 16.0,
           goumai: 394,
         },
         {
-          imgurl: require("./img/xuegao.jpg"),
+          imgurl: './img/xuegao.jpg',
           des: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           price: 16.0,
           goumai: 394,
         },
         {
-          imgurl: require("./img/xuegao.jpg"),
+          imgurl: './img/xuegao.jpg',
           des: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           price: 16.0,
           goumai: 394,
         },
         {
-          imgurl: require("./img/xuegao.jpg"),
+          imgurl: './img/xuegao.jpg',
           des: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           price: 16.0,
           goumai: 394,
         },
         {
-          imgurl: require("./img/xuegao.jpg"),
+          imgurl: './img/xuegao.jpg',
           des: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
           price: 16.0,
           goumai: 394,
