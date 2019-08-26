@@ -3,6 +3,7 @@
         "pages/hometost/main",
         "pages/type/main",
         "pages/shopbus/main",
+        "pages/mine/main",
         "pages/list/main",
         "pages/index/main"
         
@@ -35,7 +36,7 @@
         },
         {
           "text": "个人中心",
-          "pagePath": "pages/list/main",
+          "pagePath": "pages/mine/main",
           "iconPath": "static/tabbarimg/tabbar_mine.png",
           "selectedIconPath": "static/tabbarimg/tabbar_mine_pressed.png"
         }],
