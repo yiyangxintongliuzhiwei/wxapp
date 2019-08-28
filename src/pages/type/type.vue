@@ -4,7 +4,7 @@
     <div class="xian"></div>
     <div class="box">
       <div class="xuanxiang">
-        <div v-for="(item, index) in xuanxianglist" :class=" isactive == item ? 'active' : 'xuanxiangstyle' " :key="index">{{item}}</div>
+        <div v-for="(item, index) in xuanxianglist" :class=" isactive == item ? 'active' : 'xuanxiangstyle' " :key="index" @click="changetype(item, index)">{{item}}</div>
       </div>
       <div class="huowu">
           <div class="meige" v-for="(item, index) in huowulist" :key="index">
@@ -74,6 +74,15 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    changetype(item, index) {
+      this.isactive = item
+    }
+  },
+  mounted() {
+    console.log(this.$store.state.type)
+    this.isactive = this.$store.state.type
   }
 }
 </script>

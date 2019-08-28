@@ -5,39 +5,15 @@
     </div>
     <swiper indicator-color="#fff" autoplay="true" interval="3000" class="type">
       <swiper-item>
-        <div class="typelist">
-          <img src="./img/个人洗护.png" alt="">
-          <div>个人洗护</div>
-        </div>
-        <div class="typelist">
-          <img src="./img/零食.png" alt="">
-          <div>零食饮料</div>
-        </div>
-        <div class="typelist">
-          <img src="./img/家居.png" alt="">
-          <div>家居清洁</div>
-        </div>
-        <div class="typelist">
-          <img src="./img/厨房.png" alt="">
-          <div>厨房日用</div>
+        <div class="typelist" v-for="(item, index) in typelistone" @click="changetypeone(item.typename, index)" :key="index">
+          <img :src="item.url" alt="">
+          <div>{{item.typename}}</div>
         </div>
       </swiper-item>
       <swiper-item>
-        <div class="typelist">
-          <img src="./img/家居.png" alt="">
-          <div>家居清洁</div>
-        </div>
-        <div class="typelist">
-          <img src="./img/零食.png" alt="">
-          <div>零食饮料</div>
-        </div>
-        <div class="typelist">
-          <img src="./img/个人洗护.png" alt="">
-          <div>个人洗护</div>
-        </div>
-        <div class="typelist">
-          <img src="./img/厨房.png" alt="">
-          <div>厨房日用</div>
+        <div class="typelist" v-for="(item, index) in typelisttwo" @click="changetypetwo(item.typename, index)" :key="index">
+          <img :src="item.url" alt="">
+          <div>{{item.typename}}</div>
         </div>
       </swiper-item>
     </swiper>
@@ -68,6 +44,42 @@
 export default {
   data() {
     return {
+      typelistone: [
+        {
+          url: require('./img/个人洗护.png'),
+          typename: '个人洗护'
+        },
+        {
+          url: require('./img/零食.png'),
+          typename: '零食饮料'
+        },
+        {
+          url: require('./img/家居.png'),
+          typename: '家居清洁'
+        },
+        {
+          url: require('./img/厨房.png'),
+          typename: '厨房日用'
+        },
+      ],
+      typelisttwo: [
+        {
+          url: require('./img/家居.png'),
+          typename: '家居清洁'
+        },
+        {
+          url: require('./img/零食.png'),
+          typename: '零食饮料'
+        },
+        {
+          url: require('./img/个人洗护.png'),
+          typename: '个人洗护'
+        },
+        {
+          url: require('./img/厨房.png'),
+          typename: '厨房日用'
+        }
+      ],
       checkboxlist: ['推荐','秒杀','拼单','预约','Vip'],
       isactive: 0,
       pruductlists: [
@@ -107,7 +119,38 @@ export default {
   methods: {
     handlecheck(item, index) {
       this.isactive = index
+    },
+    changetypeone(item, index) {
+      this.$store.state.type = item
+      wx.reLaunch({
+        url: "/pages/type/main" 
+      })
+    },
+    changetypetwo(item, index) {
+      this.$store.state.type = item
+      wx.reLaunch({
+        url: "/pages/type/main"
+      })
     }
+  },
+  mounted() {
+    //定义类型
+    this.$store.state.type = this.typelistone[0].typename
+    //用户授权
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userInfo']) {
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success () {
+              // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+              // wx.startRecord()
+              console.log('授权成功')
+            }
+          })
+        }
+      }
+    })
   }
 }
 </script>

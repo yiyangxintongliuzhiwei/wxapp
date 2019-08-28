@@ -15,7 +15,7 @@ export default {
   data() {},
   methods: {
     toshop() {
-      wx.switchTab({
+      wx.reLaunch({
         url: "/pages/hometost/main" 
       })
     }
