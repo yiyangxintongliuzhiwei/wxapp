@@ -5,7 +5,8 @@
         "pages/shopbus/main",
         "pages/mine/main",
         "pages/list/main",
-        "pages/index/main"
+        "pages/index/main",
+        "pages/detail/main"
         
     ],
     "window": {

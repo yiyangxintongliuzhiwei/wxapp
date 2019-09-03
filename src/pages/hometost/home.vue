@@ -21,7 +21,7 @@
       <div v-for="(item, index) in checkboxlist" :class=" isactive == index ? 'active' : 'checkboxstyle' " :key="index" @click="handlecheck(item, index)">{{item}}</div>
     </div>
     <div class="product">
-      <div class="productlist" v-for="(item, index) in pruductlists" :key="index">
+      <div class="productlist" v-for="(item, index) in pruductlists" :key="index" @click="Todetail(item, index)">
         <div class="tupian">
           <img :src="item.imgurl" alt="">
         </div>
@@ -91,25 +91,25 @@ export default {
         },
         {
           imgurl: require("./img/xuegao.jpg"),
-          description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
+          description: '蒙牛 六个圈蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         },
         {
           imgurl: require("./img/xuegao.jpg"),
-          description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
+          description: '蒙牛 小布丁蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         },
         {
           imgurl: require("./img/xuegao.jpg"),
-          description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
+          description: '蒙牛 大布丁蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         },
         {
           imgurl: require("./img/xuegao.jpg"),
-          description: '蒙牛 巧乐兹蒙牛巧乐兹蒙牛巧...',
+          description: '蒙牛 火炬蒙牛巧乐兹蒙牛巧...',
           goumailiang: 2350,
           price: 16.0
         }
@@ -130,6 +130,12 @@ export default {
       this.$store.state.type = item
       wx.reLaunch({
         url: "/pages/type/main"
+      })
+    },
+    //物品详情
+    Todetail(item, index) {
+      wx.navigateTo({
+        url: `/pages/detail/main?id=${item.description}&price=${item.price}`
       })
     }
   },
