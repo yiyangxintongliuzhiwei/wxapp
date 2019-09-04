@@ -11,8 +11,9 @@
     </div>
     <div class="xuanzeguige">
       <div class="xuankuang">
-        <div></div>
-        <div></div>
+        <div class="xiaokuang">选择规格</div>
+        <div>+</div>
+        <div>立即购买</div>
       </div>
     </div>
   </div>
@@ -106,5 +107,8 @@ export default {
     position: absolute;
     left: 0;
     bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 </style>
