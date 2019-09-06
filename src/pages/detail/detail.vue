@@ -5,15 +5,23 @@
     </div>
     <div class="miaoshu">{{description}}</div>
     <div class="jiage">￥{{price}}</div>
-    <div class="guige">
+    <div class="guige" @click="changeguige">
       <div class="qingxuanze">{{qingxuanze}}</div>
       <div class="xuanzehao">></div>
     </div>
-    <div class="xuanzeguige">
+    <div class="xuanzeguige" v-show="ifxuanze" @click="closeguige">
       <div class="xuankuang">
-        <div class="xiaokuang">选择规格</div>
-        <div>+</div>
-        <div>立即购买</div>
+        <div class="xiaokuang">
+          <div>100ml</div>
+          <div>200ml</div>
+          <div>300ml</div>
+        </div>
+        <div class="shuliang">
+          <span @click.stop="reduce">-</span>
+          <div>{{count}}</div>
+          <span @click.stop="increment">+</span>
+        </div>
+        <button class="buy">立即购买</button>
       </div>
     </div>
   </div>
@@ -27,7 +35,9 @@ export default {
       description: '',
       price: '',
       qingxuanze: '请选择规格',
-      clentheight: 0
+      clentheight: 0,
+      ifxuanze: false,
+      count: 0
     }
   },
   mounted() {
@@ -38,7 +48,24 @@ export default {
     this.description = this.options.id
     this.price = this.options.price
   },
-  methods: {}
+  methods: {
+    changeguige() {
+      this.ifxuanze = true
+    },
+    closeguige() {
+      this.ifxuanze = false
+    },
+    increment() {
+      this.count ++
+    },
+    reduce() {
+      if (this.count <= 0 ) {
+        return
+      } else {
+        this.count --
+      }
+    }
+  }
 }
 </script>>
 <style>
@@ -109,6 +136,21 @@ export default {
     bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+  .xiaokuang{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .xiaokuang div{
+    border: 1rpx solid #000;
+    border-radius:4rpx;
+    color: #000
+  }
+  .shuliang{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 </style>
