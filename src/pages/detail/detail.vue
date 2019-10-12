@@ -54,6 +54,7 @@ export default {
     },
     closeguige() {
       this.ifxuanze = false
+      this.qingxuanze = '已选择' + '300ml'
     },
     increment() {
       this.count ++
